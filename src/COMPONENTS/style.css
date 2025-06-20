@@ -1,0 +1,5 @@
+
+.ligroup:hover .hover-target {
+  background-color: #146cda;
+  display: none;
+}

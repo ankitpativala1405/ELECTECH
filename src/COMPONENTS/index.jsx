@@ -1,7 +1,6 @@
 import React from "react";
 import { IoCallSharp } from "react-icons/io5";
 import { MdOutlineEmail } from "react-icons/md";
-import NavbarHeader from './navbar'
 import {
   FiHeart,
   FiShoppingCart,
@@ -147,7 +146,7 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <NavbarHeader/>
+
     </>
   );
 };
