@@ -9,20 +9,17 @@ import { BsArrowRepeat } from "react-icons/bs";
 
 const Header = () => {
   const [isAccountOpen, setIsAccountOpen] = useState(false);
-const [showDropdown, setShowDropdown] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
 
- const toggleAccountDropdown = () => {
-  if (showDropdown) {
-    // Start fade-out
-    setIsAccountOpen(false);
-    // Remove from DOM after fade-out
-    setTimeout(() => setShowDropdown(false), 200); // match duration
-  } else {
-    // Make visible and fade-in
-    setShowDropdown(true);
-    setTimeout(() => setIsAccountOpen(true), 10); // slight delay to trigger transition
-  }
-};
+  const toggleAccountDropdown = () => {
+    if (showDropdown) {
+      setIsAccountOpen(false);
+      setTimeout(() => setShowDropdown(false), 200);
+    } else {
+      setShowDropdown(true);
+      setTimeout(() => setIsAccountOpen(true), 10);
+    }
+  };
   return (
     <>
       <header className="bg-[#171d27]">
@@ -177,16 +174,21 @@ const [showDropdown, setShowDropdown] = useState(false);
                 </div>
               </div>
 
-
-               {showDropdown && (
+              {showDropdown && (
                 <div
                   className={`absolute right-[-40px] mt-2 w-48 bg-white text-black rounded shadow-lg z-50 transition-all duration-2000 ${
-                    isAccountOpen ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                    isAccountOpen
+                      ? "opacity-100 scale-100"
+                      : "opacity-0 scale-95"
                   }`}
                 >
                   <ul className="text-sm font-medium">
-                    <li className="px-4 py-2 rounded hover:bg-[#146cda] cursor-pointer hover:text-white hover:py-3 transition-all duration-1000">Login</li>
-                    <li className="px-4 py-2 rounded hover:bg-[#146cda] cursor-pointer hover:text-white hover:py-3 transition-all duration-1000">Register</li>
+                    <li className="px-4 py-2 rounded hover:bg-[#146cda] cursor-pointer hover:text-white hover:py-3 transition-all duration-1000">
+                      Login
+                    </li>
+                    <li className="px-4 py-2 rounded hover:bg-[#146cda] cursor-pointer hover:text-white hover:py-3 transition-all duration-1000">
+                      Register
+                    </li>
                   </ul>
                 </div>
               )}
