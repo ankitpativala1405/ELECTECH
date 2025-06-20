@@ -1,18 +1,12 @@
 import React from "react";
-import Header from "../../COMPONENTS/index";
 import HeroSlider from "../../COMPONENTS/HeroSlider";
-import NavbarHeader from "../../COMPONENTS/navbar";
-import Footer from "../../COMPONENTS/Footer";
-import ScrollToTopButton from "../../COMPONENTS/ScrollToTopButton";
+import SignUp from "../SignUp";
 
 const HomePage = () => {
   return (
     <>
-      <Header />
-      <NavbarHeader />
       <HeroSlider />
-      <ScrollToTopButton/>
-      <Footer/>
+      <SignUp/>
     </>
   );
 };
