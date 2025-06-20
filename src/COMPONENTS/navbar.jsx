@@ -3,10 +3,7 @@
 import React, { useState } from "react";
 import { VscListFlat } from "react-icons/vsc";
 import { IoIosArrowDown } from "react-icons/io";
-import {
-  MdKeyboardArrowLeft,
-  MdOutlineKeyboardArrowRight,
-} from "react-icons/md";
+import { MdKeyboardArrowLeft, MdOutlineKeyboardArrowRight} from "react-icons/md";
 import Image from "next/image";
 import "./style.css";
 
