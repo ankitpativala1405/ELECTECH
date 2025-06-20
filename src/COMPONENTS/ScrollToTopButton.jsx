@@ -16,12 +16,12 @@ const ScrollToTopButton = () => {
     <button
       aria-label="Scroll to top"
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className={`fixed bottom-8 right-8 bg-blue-700 hover:bg-blue-600 text-white p-3 z-50 rounded-full shadow-lg transition-transform animate-bounce duration-[2000ms] ease-in-out ${
+      className={`fixed bottom-8 right-8 bg-blue-700 hover:bg-blue-600 text-white p-1.5 z-50 rounded-full shadow-lg transition-transform animate-bounce duration-[2000ms] ease-in-out ${
         animate ? "-translate-y-[10px]" : "translate-y-0"
       }`}
     >
       <svg
-        className="h-6 w-6"
+        className="h-8 w-8 animate-ping"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"

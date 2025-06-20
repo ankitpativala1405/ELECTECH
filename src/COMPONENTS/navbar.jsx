@@ -117,7 +117,7 @@ const NavbarHeader = () => {
   };
 
   return (
-    <section className="bg-[#146cda]">
+    <section className="bg-[#146cda] fixed-navbar">
       <div className="container mx-auto p-3">
         <nav className="flex justify-center">
           <div className="flex items-center gap-[45px] py-1">
