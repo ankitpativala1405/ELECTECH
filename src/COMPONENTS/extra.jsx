@@ -1,78 +1,64 @@
-// components/RegisterForm.js
+// pages/login.js
+import Image from "next/image";
+import headphoneImg from "../public/headphones.jpg"; // replace with your own image
 
-import React from 'react';
-
-const RegisterForm = () => {
+export default function LoginPage() {
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold mb-5">Sign Up</h2>
-      <p className="mb-5">Already have an account? <a href="/login" className="text-blue-500">Log in instead!</a></p>
-
-      <form>
-        <div className="mb-4">
-          <label className="block mb-1">Social title:</label>
-          <div className="flex items-center">
-            <label className="mr-5">
-              <input type="radio" name="title" value="Mr." className="mr-2" /> Mr.
-            </label>
-            <label>
-              <input type="radio" name="title" value="Mrs." className="mr-2" /> Mrs.
-            </label>
+    <div className="min-h-screen flex">
+      {/* Sidebar */}
+      <aside className="w-[280px] border-r p-6 space-y-10">
+        <h2 className="text-lg font-semibold">Home</h2>
+        <ul className="space-y-2 text-gray-700 font-medium">
+          {["Accessories", "Phones", "Smart Devices", "Laptop & Computers", "Chargers & Cables"].map((item) => (
+            <li key={item} className="flex justify-between items-center border-b pb-1">
+              {item}
+              <span className="text-xl font-bold">+</span>
+            </li>
+          ))}
+        </ul>
+        {/* Promotion */}
+        <div className="bg-[#e6c5a2] rounded-md text-center p-3">
+          <p className="text-white font-semibold mb-2">Latest Wireless Headphones</p>
+          <div className="w-full h-40 relative rounded overflow-hidden">
+            <Image src={headphoneImg} alt="Headphones" fill objectFit="cover" />
           </div>
         </div>
+      </aside>
 
-        <div className="mb-4">
-          <label htmlFor="first-name" className="block mb-1">First name:</label>
-          <input type="text" id="first-name" className="w-full border border-gray-300 p-2 rounded" />
+      {/* Main Content */}
+      <main className="flex-1 flex items-center justify-center px-6">
+        <div className="w-full max-w-xl border rounded p-10 relative">
+          <form className="space-y-6">
+            <div>
+              <label className="block font-medium mb-1">Email</label>
+              <input
+                type="email"
+                className="w-full border rounded px-4 py-2"
+                placeholder="Enter your email"
+              />
+            </div>
+            <div className="relative">
+              <label className="block font-medium mb-1">Password</label>
+              <input
+                type="password"
+                className="w-full border rounded px-4 py-2 pr-20"
+                placeholder="Enter password"
+              />
+              <button type="button" className="absolute top-8 right-0 bg-blue-600 text-white px-4 py-1 rounded">
+                SHOW
+              </button>
+            </div>
+            <div className="text-center text-sm text-gray-600">Forgot your password?</div>
+            <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded font-bold">
+              SIGN IN
+            </button>
+            <hr className="my-4" />
+            <div className="text-center text-sm">
+              No account? <a href="#" className="text-blue-600">Create one here</a>
+            </div>
+          </form>
         </div>
-
-        <div className="mb-4">
-          <label htmlFor="last-name" className="block mb-1">Last name:</label>
-          <input type="text" id="last-name" className="w-full border border-gray-300 p-2 rounded" />
-          <p className="text-gray-500 text-xs">Only letters and the dot (.) character, followed by a space, are allowed.</p>
-        </div>
-
-        <div className="mb-4">
-          <label htmlFor="email" className="block mb-1">Email:</label>
-          <input type="email" id="email" className="w-full border border-gray-300 p-2 rounded" />
-        </div>
-
-        <div className="mb-4">
-          <label htmlFor="password" className="block mb-1">Password:</label>
-          <input type="password" id="password" className="w-full border border-gray-300 p-2 rounded" />
-          <button type="button" className="text-blue-500">SHOW</button>
-        </div>
-
-        <div className="mb-4">
-          <label htmlFor="birthdate" className="block mb-1">Birthdate:</label>
-          <input type="date" id="birthdate" className="w-full border border-gray-300 p-2 rounded" />
-          <p className="text-gray-500 text-xs">(E.g.: 05/31/1970)</p>
-        </div>
-
-        <div className="mb-4">
-          <input type="checkbox" id="offers" className="mr-2" />
-          <label htmlFor="offers" className="text-sm">Receive offers from our partners</label>
-        </div>
-
-        <div className="mb-4">
-          <input type="checkbox" id="newsletter" className="mr-2" />
-          <label htmlFor="newsletter" className="text-sm">Sign up for our newsletter</label>
-        </div>
-
-        <div className="mb-4">
-          <input type="checkbox" id="privacy" className="mr-2" />
-          <label htmlFor="privacy" className="text-sm">Customer data privacy</label>
-        </div>
-
-        <div className="mb-4">
-          <input type="checkbox" id="terms" className="mr-2" />
-          <label htmlFor="terms" className="text-sm">I agree to the terms and conditions and the privacy policy</label>
-        </div>
-
-        <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded">SAVE</button>
-      </form>
+      </main>
     </div>
   );
-};
-
-export default RegisterForm;
+}
